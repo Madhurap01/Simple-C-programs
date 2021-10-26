@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+void main()
+{
+    int arr[20],sub[20],i,j,k,n,sum,cursum;
+    printf("Enter the array size\n");
+    scanf("%d",&n);
+    printf("Enter the array elements\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    
+    }
+    printf("Enter the sum\n");
+    scanf("%d",&sum);
+    for(i=0;i<n;i++)
+    {
+        cursum=arr[i];
+        for(j=i+1;j<n;j++)
+        {
+            if(cursum==sum)
+            {
+                sub[i]=arr[i];
+                printf("Index ranges from %d to %d\n",i,j-1);
+                printf("Subarray [ ");
+                for(k=i;k<j;k++)
+                {
+                    printf("%d,",sub[k]);
+                
+                }
+                printf(" ]");
+            }
+            if(cursum>sum||j>n)
+            {
+                break;
+            }
+            cursum=cursum+arr[j];
+            sub[j]=arr[j];
+        }
+    }
+}
