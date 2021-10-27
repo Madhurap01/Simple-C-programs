@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include<string.h>
+
+
+void main()
+{
+    char str1[20],str2[20];
+    printf("Enter the first string\n");
+    gets(str1);
+    printf("Enter the second string\n");
+    gets(str2);
+    void *flag;
+    if(strlen(str1)==strlen(str2))
+    {
+        strcat(str1,str1);
+        flag=strstr(str1,str2);
+        if(flag!=NULL)
+        {
+            printf("The second string is the rotation of the first\n ");
+        }
+        else
+        {
+            printf("The second string is not the rotation of the first\n");
+        }
+        
+    }
+    else
+    {
+        
+    
+        printf("The second string is not the rotation of the first\n");
+    }
+    
+}
