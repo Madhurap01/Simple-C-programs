@@ -1,0 +1,39 @@
+#include <stdio.h>  
+#include <string.h>  
+   
+int main()  
+{  
+    char string[] = "a big black bear sat on a big black rug ";  
+    int i, j, max;int len = strlen(string);  
+    char maxChar = string[0];  
+    int fr[len];  
+      
+     
+    for(i = 0; i < len; i++) {  
+        fr[i] = 1;  
+        for(j = i+1; j < len; j++) {  
+            if(string[i] == string[j] && string[i] != ' ' && string[i] != '0') {  
+                fr[i]++;  
+                  
+                  
+                string[j] = '0';  
+            }  
+        }  
+    }  
+      
+     
+     max = fr[0];  
+    for(i = 0; i < len; i++) {  
+          
+        
+        if(max < fr[i]) {  
+            max = fr[i];  
+            maxChar = string[i];  
+        }  
+    }  
+      
+     
+    printf("Maximum occurring character: %c", maxChar);  
+          
+    return 0;  
+}  
